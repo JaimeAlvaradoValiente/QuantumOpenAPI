@@ -24,7 +24,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-code: 'http:example.com'
+      x-code: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/grover-general-qiskit.py'
   /findByCategory:
     get:
       tags:
