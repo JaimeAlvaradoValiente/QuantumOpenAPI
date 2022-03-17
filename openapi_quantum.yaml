@@ -11,20 +11,45 @@ info:
 tags:
   - name: quantum
     description: Everything about your Quantum Service
+  - name: user
+    description: Operations about user
+  - name: quantum_code
+    description: Everything about your quantum service code and circuits
 paths:
-  /execution:
-    post:
+  /circuit/grover:
+    get:
       tags:
-        - quantum
-      summary: Run the execution of a circuit
+        - quantum_code
+      summary: Get the circuit implementation of Grover Algorithm
       description: ''
-      operationId: circuit
+      operationId: grover_circuit
       responses:
         '200':
           description: successful operation
         '405':
           description: Invalid execution
-      x-code: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/grover-general-qiskit.py'
+      x-code: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/grover-general-qiskit.py'  
+  /circuit/random:
+    get:
+      tags:
+        - quantum_code
+      summary: Get the circuit implementation for random numbers
+      description: ''
+      operationId: random_circuit
+      parameters:
+        - name: api_token
+          in: query
+          description: API Token
+          required: true
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid execution
+      x-code: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/random_number_qiskit.py'
   /findByCategory:
     get:
       tags:
@@ -63,9 +88,6 @@ paths:
                   $ref: '#/components/schemas/quantum'
         '400':
           description: Invalid status value
-      security:
-        - petstore_auth:
-            - read:pets
   /user:
     post:
       tags:
