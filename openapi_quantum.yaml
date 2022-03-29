@@ -28,7 +28,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-code: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/grover-general-qiskit.py'  
+      x-quantumCode: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/grover-general-qiskit.py'  
   /circuit/random:
     get:
       tags:
@@ -49,7 +49,7 @@ paths:
           description: successful operation
         '405':
           description: Invalid execution
-      x-code: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/random_number_qiskit.py'
+      x-quantumCode: 'https://raw.githubusercontent.com/JaimeAlvaradoValiente/QuantumOpenAPI/main/random_number_qiskit.py'
   /findByCategory:
     get:
       tags:
