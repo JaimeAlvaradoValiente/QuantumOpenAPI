@@ -11,11 +11,6 @@ circuit.measure(q,c) # Measures all qubits
 
 backend = provider.get_backend('ibmq_qasm_simulator')
 job = execute(circuit, backend, shots=1)
-                               
-print('Executing Job...\n')                 
+                                           
 result = job.result()
 counts = result.get_counts(circuit)
-
-print('RESULT: ',counts,'\n')
-print('Press any key to close')
-input()
